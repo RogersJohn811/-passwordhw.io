@@ -54,24 +54,27 @@ function generatePassword() {
         password += newPassString.charAt(Math.floor(Math.random() * newPassString.length));
     }
 // Return the password value.
-
+    return password;
+}
 /*
   The collectInput() function simply prompts the user for
   their input regarding how they want to design their
   password string. Collects the desired password length
   and the desired password character components.
 */
-
+function collectInput() {
 // Get the desired password length from the user.
-
+    passLengthInput = prompt("Desired password length (8-128): ");
 // Validate the user's input to ensure the length requirements are met.
-
+    while ((passLengthInput < 8) || (passLengthInput > 128) || (isNaN(passLengthInput))) {
 // Gently nudge the user in the correct direction
-
+        passLengthInput = prompt("Desired password length must be between 8-128 characters long!")
+    }
 // Make our passLengthInput value a valid number.
-
+passLengthInput = parseInt(passLengthInput);
+console.log(`User selected a password length of ${passLengthInput}`);
 // Ask the user if they want uppercase chars, set hasUppers flag appropriately.
-
+hasUppers = prompt("Would you like to use uppercase characters?");
 // If the user wants lowercase characters add our lowerCase string to the newPassString variable.
 
 // Ask the user if they want lower chars, set hasLowers flag appropriately.
