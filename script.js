@@ -35,22 +35,24 @@ function writePassword() {
 // Store the password variable with the returnd value of generatePassword().
     var password = generatePassword();
 // Show the user the password in the passwordText box.
-
+    passwordText.value = password;
+}
 /* 
    generatePassword() concatenates the supplied
    user input to return the password value to
    the writePassword() method.
    @return password, the variable containing our password.
 */
-
+function generatePassword() {
 // Clear out the password value so the user can generate a clean new password.
-
+    resetPasswordBox();
 // Call collectInput() to gather our users' input.
-
+    collectInput();
 // Loop through our newPassString based on the desired lengh of the password.
-
+    for (i = 0; i < passLengthInput; i++) {
 // Using the contents of the newPassString, randomly assign a character to password variable.
-
+        password += newPassString.charAt(Math.floor(Math.random() * newPassString.length));
+    }
 // Return the password value.
 
 /*
