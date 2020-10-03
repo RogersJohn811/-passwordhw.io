@@ -76,25 +76,42 @@ console.log(`User selected a password length of ${passLengthInput}`);
 // Ask the user if they want uppercase chars, set hasUppers flag appropriately.
 hasUppers = prompt("Would you like to use uppercase characters?");
 // If the user wants lowercase characters add our lowerCase string to the newPassString variable.
-
+if (hasUppers) {
+    newPassString += pass.upperCase;
+    console.log("Uppercase selected.");
+  } else {
+    console.log("Uppercase not selected.");
+  }
 // Ask the user if they want lower chars, set hasLowers flag appropriately.
-
+hasLowers = promt("Would you like to use lowercase characters?")
 // If the user wants lowercase characters add our lowerCase string to the newPassString variable.
-
-// concatenate lowerCase 
+if (hasLowers) {
+    newPassString += pass.lowerCase;
+    console.log("Lowercase selected.");
+  } else {
+    console.log("Lowercase not selected.");
+  }
 
 // Ask the user if they want numers, set hasNumbers flag appropriately.
-
+hasNumbers = confirm("Would you like numbers?");
 // If the user wants numbers add our numbers string to the newPassString variable.
-
-    // concatenate numbers value to the newPassString.
+if (hasNumbers) {
+    newPassString += pass.numbers;
+    console.log("Numbers selected.");
+  } else {
+    console.log("Numbers not selected.");
+  }
 
 // Ask the user if they want numers, set hasSpecialChars flag appropriately.
-
+hasSpecialChars = confirm("Would you like special characters?")
 // If the user wants special characters add our special string to the newPassString variable.
-
+if (hasSpecialChars) {
     // concatenate special value to the newPassString.
-
+    newPassString += pass.special;
+    console.log("Special chars selected.");
+  } else {
+    console.log("Special chars not selected.");
+  }
 // Check to ensure the user selected atleast one of the values from the prompts.
 
 /*
